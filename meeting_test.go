@@ -24,6 +24,14 @@ func Test_Split_Input_Fred_Corwill_Should_Be_Fred_Coreill(t *testing.T) {
 
 	assert.Equal(t, expected, actual)
 }
+func Test_Split_Input_Fred_Corwill_Should_Be_Fred_Coreill_2(t *testing.T) {
+	expected := "(BELL, MEGAN)(CORNWELL, AMBER)(DORNY, JAMES)(DORRIES, PAUL)(GATES, JOHN)(KERN, ANN)(KORN, ANNA)(META, ALEX)(RUSSEL, ELIZABETH)(STEVE, LEWIS)(WAHL, MICHAEL)"
+	text := "John:Gates;Michael:Wahl;Megan:Bell;Paul:Dorries;James:Dorny;Lewis:Steve;Alex:Meta;Elizabeth:Russel;Anna:Korn;Ann:Kern;Amber:Cornwell"
+
+	actual := meeting.GetMeeting(text)
+
+	assert.Equal(t, expected, actual)
+}
 
 func Test_Fomating_Input_List_Name_Shoud_Be_Formater(t *testing.T) {
 	expected := []string{"(Corwill, Fred)", "(Corwill, Wilfred)", "(Tornbull, Barney)", "(Tornbull, Betty)", "(Tornbull, Bjon)", "(Corwill, Raphael)", "(Corwill, Alfred)"}

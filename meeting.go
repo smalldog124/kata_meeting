@@ -7,14 +7,11 @@ import (
 )
 
 func GetMeeting(text string) string {
+	text = UpperCase(text)
 	people := strings.Split(text, ";")
-	format := Formating(people)
-	var textUpper []string
-	for _, name := range format {
-		textUpper = append(textUpper, UpperCase(name))
-	}
-	sort.Strings(textUpper)
-	return fmt.Sprintf("%s%s%s%s%s%s%s", textUpper[0], textUpper[1], textUpper[2], textUpper[3], textUpper[4], textUpper[5], textUpper[6])
+	listMeeting := Formating(people)
+	sort.Strings(listMeeting)
+	return strings.Join(listMeeting, "")
 }
 
 func UpperCase(text string) string {
